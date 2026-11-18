@@ -57,11 +57,6 @@
     const stage = declared ? Number.parseFloat(declared) : (index % 5);
     item.style.setProperty('--reveal-delay', `${Math.min(Math.max(stage, 0), 4) * 115}ms`);
   });
-  revealItems.forEach((item, index) => {
-    const declared = item.style.getPropertyValue('--i');
-    const stage = declared ? Number.parseFloat(declared) : index % 5;
-    item.style.setProperty('--reveal-delay', `${Math.min(Math.max(stage, 0), 4) * 105}ms`);
-  });
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
     // Enable the hidden state FIRST, then reveal in the next frame so the entrance transition plays.
     root.classList.add('js-motion-ready');
