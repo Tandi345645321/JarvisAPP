@@ -185,7 +185,7 @@ h1 { max-width: 720px; margin-bottom: 25px; font-size: clamp(54px,6.6vw,86px); l
 .engine-orbit { position: absolute; width: 340px; height: 340px; border: 1px solid var(--color-rule); border-radius: 50%; }
 .orbit-two { width: 240px; height: 240px; border-style: dashed; opacity: .55; }
 .engine-core { position: relative; z-index: 2; width: 134px; height: 134px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; border: 1px solid color-mix(in srgb,var(--color-accent) 28%,var(--color-rule)); border-radius: 50%; background: var(--color-card-alt); box-shadow: 0 0 80px color-mix(in srgb,var(--color-accent) 12%,transparent), inset 0 1px 0 #ffffff14; }
-.engine-core img { width: 47px; height: 47px; object-fit: contain; }
+.engine-core-photo { width: 82px; height: 82px; flex: 0 0 82px; overflow: hidden; border: 1px solid color-mix(in srgb,var(--color-accent) 34%,transparent); border-radius: 50%; background-color: #0a0710; background-image: url("jarvis-startup.webp"); background-repeat: no-repeat; background-size: 245% auto; background-position: 50% 13%; box-shadow: 0 0 28px #a56cff2b, inset 0 1px 0 #ffffff20; }
 .engine-core span { color: var(--color-secondary); font: 8px var(--font-mono); letter-spacing: .12em; }
 .engine-node { position: absolute; z-index: 3; display: flex; align-items: center; gap: 7px; padding: 10px 12px; border: 1px solid var(--color-rule); border-radius: 10px; background: var(--glass-bg); backdrop-filter: blur(12px); box-shadow: var(--glass-shadow); }
 .engine-node strong { font-size: 11px; font-weight: 650; }
@@ -303,8 +303,8 @@ h1 { max-width: 720px; margin-bottom: 25px; font-size: clamp(54px,6.6vw,86px); l
 .cookie-settings-panel input { accent-color: var(--color-accent); }
 .cookie-settings-panel small { grid-column: 2; color: var(--color-muted); font-size: 9px; }
 .reveal { opacity: 1; transform: none; }
-.js-motion-ready .reveal { opacity: 0; transform: translateY(30px) scale(.985); transition: opacity .85s var(--ease-soft), transform .85s var(--ease-soft); transition-delay: calc(var(--i,0) * 95ms); }
-.js-motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+.js-motion-ready .reveal { opacity: 0; transform: translateY(42px) scale(.975); filter: blur(3px); transition: opacity .9s var(--ease-soft), transform .9s var(--ease-soft), filter .9s var(--ease-soft); transition-delay: calc(var(--i,0) * 110ms); }
+.js-motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 
 /* Intentional motion: ambient light, interface float, orbit rotation and visible interaction feedback. */
 @keyframes ambient-drift { 0% { transform: translate3d(0,0,0) scale(1); opacity: .72; } 100% { transform: translate3d(-44px,35px,0) scale(1.12); opacity: 1; } }
