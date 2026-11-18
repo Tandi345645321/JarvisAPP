@@ -2,6 +2,7 @@
   'use strict';
 
   const root = document.documentElement;
+
   const themeButton = document.querySelector('.theme-toggle');
   const menuButton = document.querySelector('.menu-toggle');
   const mobileNav = document.querySelector('#mobile-nav');
@@ -69,7 +70,19 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
     revealItems.forEach(item => observer.observe(item));
+    // Reveal the first viewport before enabling the hidden/reveal state for off-screen content.
+    revealItems.filter(item => item.getBoundingClientRect().top < window.innerHeight * 1.2).forEach(item => item.classList.add('is-visible'));
+    root.classList.add('js-motion-ready');
   } else revealItems.forEach(item => item.classList.add('is-visible'));
+
+  // Image diagnostics: reveal a readable fallback instead of leaving a silent empty frame.
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', () => {
+      img.classList.add('image-missing');
+      const wrap = img.closest('figure, .growth-image, .setup-aside, .gallery-card');
+      if (wrap) wrap.classList.add('has-image-error');
+    }, { once: true });
+  });
 
   // FAQ: keep one answer open at a time for a cleaner reading flow.
   document.querySelectorAll('.faq-item').forEach(item => {
