@@ -61,6 +61,8 @@
   // Scroll reveal. Content remains visible when JS is unavailable or motion is reduced.
   const revealItems = [...document.querySelectorAll('.reveal')];
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+    // Enable the hidden state FIRST, then reveal in the next frame so the entrance transition plays.
+    root.classList.add('js-motion-ready');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -68,12 +70,16 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
     revealItems.forEach(item => observer.observe(item));
-    // Reveal the first viewport before enabling the hidden/reveal state for off-screen content.
-    revealItems.filter(item => item.getBoundingClientRect().top < window.innerHeight * 1.2).forEach(item => item.classList.add('is-visible'));
-    root.classList.add('js-motion-ready');
-  } else revealItems.forEach(item => item.classList.add('is-visible'));
+    requestAnimationFrame(() => {
+      revealItems
+        .filter(item => item.getBoundingClientRect().top < window.innerHeight * 1.08)
+        .forEach(item => item.classList.add('is-visible'));
+    });
+  } else {
+    revealItems.forEach(item => item.classList.add('is-visible'));
+  }
 
   // Image diagnostics: reveal a readable fallback instead of leaving a silent empty frame.
   document.querySelectorAll('img').forEach(img => {
