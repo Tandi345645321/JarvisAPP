@@ -847,3 +847,27 @@ h1 { max-width: 720px; margin-bottom: 25px; font-size: clamp(54px,6.6vw,86px); l
   .js-motion-ready .reveal.is-visible { opacity: 1; }
   .site-header::before { animation: none !important; }
 }
+
+
+/* Progressive enhancement: physically displace the backdrop by a few pixels where SVG backdrop filters are supported. */
+@supports (backdrop-filter: url(#liquid-glass-warp)) {
+  .site-header,
+  .site-header.is-scrolled {
+    -webkit-backdrop-filter: url(#liquid-glass-warp) saturate(1.8) brightness(1.1) contrast(1.16) !important;
+    backdrop-filter: url(#liquid-glass-warp) saturate(1.8) brightness(1.1) contrast(1.16) !important;
+  }
+}
+
+/* Keep the reduced-motion reveal as a short opacity transition, even when global rules use !important. */
+@media (prefers-reduced-motion: reduce) {
+  .js-motion-ready .reveal {
+    opacity: 0 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: opacity .24s ease-out !important;
+    transition-delay: 0ms !important;
+  }
+  .js-motion-ready .reveal.is-visible {
+    opacity: 1 !important;
+  }
+}
