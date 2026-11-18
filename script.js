@@ -34,7 +34,7 @@
     if (menuButton) menuButton.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>';
   }));
 
-  // The glass navigation remains visible; only the mobile purchase bar follows scroll direction.
+  // Keep the transparent glass panel visible while content scrolls behind it.
   let lastY = window.scrollY;
   let ticking = false;
   const updateScrollUI = () => {
@@ -54,6 +54,11 @@
   const revealItems = [...document.querySelectorAll('.reveal')];
   revealItems.forEach((item, index) => {
     const declared = item.style.getPropertyValue('--i');
+    const stage = declared ? Number.parseFloat(declared) : (index % 5);
+    item.style.setProperty('--reveal-delay', `${Math.min(Math.max(stage, 0), 4) * 115}ms`);
+  });
+  revealItems.forEach((item, index) => {
+    const declared = item.style.getPropertyValue('--i');
     const stage = declared ? Number.parseFloat(declared) : index % 5;
     item.style.setProperty('--reveal-delay', `${Math.min(Math.max(stage, 0), 4) * 105}ms`);
   });
@@ -70,10 +75,28 @@
     }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
     revealItems.forEach(item => observer.observe(item));
     requestAnimationFrame(() => {
-      revealItems
-        .filter(item => item.getBoundingClientRect().top < window.innerHeight * 1.08)
-        .forEach(item => item.classList.add('is-visible'));
+      requestAnimationFrame(() => {
+        revealItems
+          .filter(item => item.getBoundingClientRect().top < window.innerHeight * 1.08)
+          .forEach(item => item.classList.add('is-visible'));
+      });
     });
+  } else if (prefersReducedMotion && 'IntersectionObserver' in window) {
+    // Reduced-motion preference: keep a short fade, but remove movement and blur.
+    root.classList.add('js-motion-ready');
+    const reducedObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          reducedObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    revealItems.forEach(item => reducedObserver.observe(item));
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      revealItems.filter(item => item.getBoundingClientRect().top < window.innerHeight * 1.08)
+        .forEach(item => item.classList.add('is-visible'));
+    }));
   } else {
     revealItems.forEach(item => item.classList.add('is-visible'));
   }
