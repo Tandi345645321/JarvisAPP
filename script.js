@@ -34,23 +34,15 @@
     if (menuButton) menuButton.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>';
   }));
 
-  // Header and mobile purchase bar respond to scroll direction.
+  // The glass navigation remains visible; only the mobile purchase bar follows scroll direction.
   let lastY = window.scrollY;
   let ticking = false;
   const updateScrollUI = () => {
     const y = window.scrollY;
     header?.classList.toggle('is-scrolled', y > 12);
-    if (y > lastY + 4 && y > 260) {
-      header?.classList.add('is-hidden');
-      stickyCta?.classList.add('is-hidden');
-    } else if (y < lastY - 3) {
-      header?.classList.remove('is-hidden');
-      stickyCta?.classList.remove('is-hidden');
-    }
-    if (y < 100) {
-      header?.classList.remove('is-hidden');
-      stickyCta?.classList.remove('is-hidden');
-    }
+    header?.classList.remove('is-hidden');
+    if (y > lastY + 4 && y > 260) stickyCta?.classList.add('is-hidden');
+    else if (y < lastY - 3 || y < 100) stickyCta?.classList.remove('is-hidden');
     lastY = y;
     ticking = false;
   };
@@ -60,6 +52,11 @@
 
   // Scroll reveal. Content remains visible when JS is unavailable or motion is reduced.
   const revealItems = [...document.querySelectorAll('.reveal')];
+  revealItems.forEach((item, index) => {
+    const declared = item.style.getPropertyValue('--i');
+    const stage = declared ? Number.parseFloat(declared) : index % 5;
+    item.style.setProperty('--reveal-delay', `${Math.min(Math.max(stage, 0), 4) * 105}ms`);
+  });
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
     // Enable the hidden state FIRST, then reveal in the next frame so the entrance transition plays.
     root.classList.add('js-motion-ready');
