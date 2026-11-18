@@ -1,7 +1,34 @@
-# Jarvis — product website
+# Jarvis — website
 
-Static website prepared for GitHub Pages. The complete site package is provided in the downloadable archive from this conversation.
+Статический адаптивный сайт продукта Jarvis, подготовленный для GitHub Pages.
 
-After uploading the site files to the repository root, enable GitHub Pages in Settings → Pages → Deploy from a branch → main → /(root).
+## Файлы
 
-The official purchase flow is handled by https://t.me/JarvisAI_agent.
+- `index.html` — основная страница продукта.
+- `styles.css` — оформление, адаптивность, тёмная и светлая темы.
+- `script.js` — меню, тема, анимации появления, cookie-consent и опциональная GA4.
+- `privacy.html` — политика конфиденциальности сайта.
+- `thanks.html` — информационная страница благодарности (`noindex`).
+- `404.html` — страница ошибки GitHub Pages.
+- `robots.txt`, `sitemap.xml`, `site.webmanifest`, `assets/` — поисковые и графические ресурсы.
+
+## Публикация через GitHub Pages
+
+1. Открой репозиторий `Tandi345645321/JarvisAPP`.
+2. Загрузить **содержимое этой папки** в корень ветки `main` (не саму папку `jarvis-site`).
+3. В GitHub открой `Settings → Pages`.
+4. В разделе Build and deployment выбери `Deploy from a branch`, ветку `main` и папку `/ (root)`, затем сохрани.
+5. После публикации сайт будет доступен по адресу `https://tandi345645321.github.io/JarvisAPP/`.
+
+## Перед публикацией
+
+- Убедись, что URL GitHub Pages совпадает с canonical, Open Graph и sitemap URL в HTML/XML. При изменении репозитория или домена обнови эти адреса.
+- При желании подключить Google Analytics 4 добавь свой Measurement ID в `GA_MEASUREMENT_ID` в `script.js`. Пока ID пустой, GA4 не подключается. Аналитика загружается только после согласия пользователя.
+- Покупка ведёт в `https://t.me/JarvisAI_agent`.
+- Текущие цены на сайте: 150 Telegram Stars за месяц и 1000 Telegram Stars навсегда.
+
+## Важные технические границы
+
+GitHub Pages — статический хостинг. Здесь нет серверной обработки формы, серверной валидации, rate-limit, API лицензирования или подтверждения оплаты. Покупка и выдача архива остаются в Telegram-боте. Если позже появятся формы или API сайта, для них понадобится отдельный серверный backend с проверкой входных данных, CSRF/CORS-политикой и ограничением частоты запросов.
+
+Lighthouse/Core Web Vitals не замерялись в реальном браузере и на опубликованном URL. Изображения оптимизированы, неважные изображения загружаются lazy, но целевые LCP/CLS/INP нельзя считать подтверждёнными без замера.

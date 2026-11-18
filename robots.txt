@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /thanks.html
+Disallow: /admin
+Disallow: /api
+
+Sitemap: https://tandi345645321.github.io/JarvisAPP/sitemap.xml

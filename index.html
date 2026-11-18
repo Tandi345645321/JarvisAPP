@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#060606">
+  <meta name="color-scheme" content="dark light">
+  <title>Jarvis — персональный AI-ассистент для Windows и Telegram на ПК</title>
+  <meta name="description" content="Jarvis — AI-ассистент на вашем ПК: управление файлами, запуск команд и Python, работа с документами через Telegram и CLI. Узнайте о проекте и выберите лицензию.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://tandi345645321.github.io/JarvisAPP/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#b58eea">
+  <link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Jarvis">
+  <meta property="og:title" content="Jarvis — персональный AI-ассистент для Windows">
+  <meta property="og:description" content="Не просто чат с ИИ. Ассистент, который работает на вашем компьютере: файлы, код, команды, Telegram и собственный CLI.">
+  <meta property="og:url" content="https://tandi345645321.github.io/JarvisAPP/">
+  <meta property="og:image" content="https://tandi345645321.github.io/JarvisAPP/assets/og-jarvis.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jarvis — персональный AI-ассистент для Windows">
+  <meta name="twitter:description" content="Ассистент на вашем ПК. Файлы, код, команды, Telegram и CLI.">
+  <meta name="twitter:image" content="https://tandi345645321.github.io/JarvisAPP/assets/og-jarvis.png">
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('jarvis-theme');
+        const theme = saved || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.dataset.theme = theme;
+      } catch (_) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,GRAD@8..144,400..800,0..1&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/cli-preview.webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"Organization","@id":"https://tandi345645321.github.io/JarvisAPP/#organization","name":"Jarvis","url":"https://tandi345645321.github.io/JarvisAPP/","logo":"https://tandi345645321.github.io/JarvisAPP/assets/jarvis-mark.png","sameAs":["https://github.com/Tandi345645321/JarvisAPP","https://t.me/JarvisAI_agent"]},
+      {"@type":"WebSite","@id":"https://tandi345645321.github.io/JarvisAPP/#website","url":"https://tandi345645321.github.io/JarvisAPP/","name":"Jarvis","inLanguage":"ru-RU","publisher":{"@id":"https://tandi345645321.github.io/JarvisAPP/#organization"}},
+      {"@type":"SoftwareApplication","name":"Jarvis","applicationCategory":"DeveloperApplication","operatingSystem":"Windows","description":"Персональный AI-ассистент для работы с файлами, командами, кодом и инструментами на компьютере пользователя.","offers":[{"@type":"Offer","name":"Лицензия на месяц","description":"Доступ на один месяц за 150 Telegram Stars"},{"@type":"Offer","name":"Лицензия навсегда","description":"Постоянная лицензия за 1000 Telegram Stars"}],"publisher":{"@id":"https://tandi345645321.github.io/JarvisAPP/#organization"}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"На какой системе работает Jarvis?","acceptedAnswer":{"@type":"Answer","text":"Текущая версия Jarvis предназначена для Windows. Поддержка других операционных систем рассматривается на будущее."}},
+      {"@type":"Question","name":"Что я получу после покупки?","acceptedAnswer":{"@type":"Answer","text":"После покупки через Telegram-бота вы получите архив проекта и дальнейшие инструкции по настройке и запуску."}},
+      {"@type":"Question","name":"Нужно ли самостоятельно подключать API?","acceptedAnswer":{"@type":"Answer","text":"Да. Для работы нужно получить необходимые API-ключи по инструкциям после покупки и добавить их в конфигурацию проекта."}},
+      {"@type":"Question","name":"Чем Jarvis отличается от обычного чат-бота?","acceptedAnswer":{"@type":"Answer","text":"Jarvis запускается на вашем компьютере и может работать с файлами, запускать команды и Python-код, анализировать документы и взаимодействовать через Telegram или собственный CLI."}},
+      {"@type":"Question","name":"Чем отличаются тарифы?","acceptedAnswer":{"@type":"Answer","text":"Лицензия на месяц стоит 150 Telegram Stars. Лицензия навсегда стоит 1000 Telegram Stars. Лицензия привязывается к оборудованию по HWID."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <svg class="svg-defs" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3m6 0h4"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l-2 2v-7.5A7.5 7.5 0 0 1 10.5 6H13a7 7 0 0 1 7 5.5Z"/><path d="M8 12h8M8 15h5"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4M9 10h6v4H9z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4m8-8 4 4-4 4m-3-10-2 12"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3m-4 0h8"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M13 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10Z"/><path d="M13 3v7h7M8 14h8m-8 4h8"/></symbol>
+    <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M4 8h4a2 2 0 1 0 4 0V4h4v4a2 2 0 1 0 4 0h1v5h-4a2 2 0 1 0 0 4h4v3H8v-4a2 2 0 1 0-4 0Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.4 8.3-8 10-4.6-1.7-8-5-8-10V6Z"/><path d="m8.5 12 2.2 2.2 4.8-4.8"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 19v2h16v-2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M8.5 8.5c-2.5-2.5-6-.5-6 3.5s3.5 6 6 3.5L15.5 8.5c2.5-2.5 6-.5 6 3.5s-3.5 6-6 3.5Z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 1.8 7.2L21 12l-7.2 2.8L12 22l-1.8-7.2L3 12l7.2-2.8Z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.5 1.5-4.5-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.2-1.5 6.2-6.7a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6s-1.2-.4-3.8 1.4a13 13 0 0 0-6.9 0C5.5 1.2 4.3 1.6 4.3 1.6a4.8 4.8 0 0 0-.1 3.6 5.2 5.2 0 0 0-1.4 3.6c0 5.2 3.2 6.4 6.2 6.7a3.4 3.4 0 0 0-.9 2.6V22"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Jarvis — на главную">
+        <img src="assets/jarvis-mark.png" width="34" height="34" alt="">
+        <span>jarvis<span class="brand-period">.</span></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="#features">Возможности</a>
+        <a href="#interfaces">Интерфейсы</a>
+        <a href="#setup">Установка</a>
+        <a href="#pricing">Тарифы</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Переключить тему" title="Переключить тему">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <a class="button button-small button-light header-buy" href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="header-buy">Купить Jarvis <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" hidden>
+      <a href="#features">Возможности</a><a href="#interfaces">Интерфейсы</a><a href="#setup">Установка</a><a href="#pricing">Тарифы</a>
+      <a class="button button-light" href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="mobile-menu-buy">Перейти к покупке <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell">
+      <div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="status-dot"></span> ПЕРСОНАЛЬНЫЙ AI ДЛЯ WINDOWS</div>
+          <h1>Твой компьютер.<br><span class="gradient-text">Твои правила.</span></h1>
+          <p class="hero-lede">Jarvis — ассистент, который работает на твоём ПК. Управляй файлами, запускай код и автоматизируй задачи через Telegram или собственный CLI.</p>
+          <div class="hero-actions">
+            <a class="button button-light button-large" href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="hero-buy">Купить Jarvis <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="button button-glass button-large" href="#interfaces">Посмотреть интерфейсы</a>
+          </div>
+          <div class="hero-meta">
+            <span><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg> Telegram + CLI</span>
+            <i aria-hidden="true"></i><span>Windows</span><i aria-hidden="true"></i><span>Лицензия от 150 Stars</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal" style="--i:1">
+          <div class="visual-topline"><span><b></b> JARVIS / CMD</span><span class="visual-live">LIVE PREVIEW</span></div>
+          <figure class="cli-frame">
+            <img src="assets/cli-preview.webp" width="1482" height="770" alt="Настоящий интерфейс Jarvis CMD: терминал с приветствием ассистента и строкой ввода команды" fetchpriority="high" decoding="async">
+          </figure>
+          <div class="floating-note note-left"><span class="note-icon"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg></span><span><strong>Файлы и система</strong><small>Не только папка проекта</small></span></div>
+          <div class="floating-note note-right"><span class="note-icon note-violet"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span><span><strong>Команды и код</strong><small>В одном диалоге</small></span></div>
+          <div class="visual-caption">Так выглядит работа с Jarvis в терминале</div>
+        </div>
+      </div>
+      <div class="container trust-strip reveal" style="--i:2">
+        <div><span class="strip-label">ОДИН АССИСТЕНТ</span><strong>Для повседневных задач и разработки</strong></div>
+        <div><span class="strip-label">ДВА ИНТЕРФЕЙСА</span><strong>Telegram и CLI</strong></div>
+        <div><span class="strip-label">ТВОЙ КОМПЬЮТЕР</span><strong>Работа с файлами и инструментами</strong></div>
+      </div>
+    </section>
+
+    <section class="section section-features" id="features">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><div class="eyebrow">ВОЗМОЖНОСТИ</div><h2>Не просто отвечает.<br><span class="text-secondary">Помогает делать.</span></h2></div>
+          <p>Jarvis получает доступ к инструментам компьютера и помогает выполнять реальные задачи — от работы с документами до запуска собственного кода.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card feature-card-large reveal" style="--i:0">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg></div>
+            <div class="feature-number">01 / FILE SYSTEM</div>
+            <h3>Файлы — в любой папке</h3>
+            <p>Читает, создаёт и редактирует файлы в разных местах системы. Не ограничивается одной рабочей директорией.</p>
+            <div class="file-visual" aria-hidden="true"><span class="file-pill"><svg class="icon"><use href="#i-folder"/></svg> Projects</span><span class="file-line"></span><span class="file-pill muted"><svg class="icon"><use href="#i-file"/></svg> config.py</span><span class="file-line short"></span></div>
+          </article>
+          <article class="feature-card reveal" style="--i:1">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg></div>
+            <div class="feature-number">02 / HARDWARE</div>
+            <h3>Знает твою систему</h3>
+            <p>CPU, GPU, RAM, диски, сеть и установленные программы — информация о компьютере под рукой.</p>
+          </article>
+          <article class="feature-card reveal" style="--i:2">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></div>
+            <div class="feature-number">03 / EXECUTION</div>
+            <h3>Команды и Python</h3>
+            <p>Запускает shell-команды и Python-код, чтобы переходить от идеи к выполнению.</p>
+          </article>
+          <article class="feature-card reveal" style="--i:3">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></div>
+            <div class="feature-number">04 / VISION</div>
+            <h3>Понимает изображения</h3>
+            <p>Передавай фотографии и скриншоты — Vision-модель поможет разобрать их содержимое.</p>
+          </article>
+          <article class="feature-card reveal" style="--i:4">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></div>
+            <div class="feature-number">05 / AUDIO</div>
+            <h3>Голос и документы</h3>
+            <p>Распознаёт голос через Whisper и читает PDF, DOCX, CSV и SQLite.</p>
+          </article>
+          <article class="feature-card reveal" style="--i:5">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-puzzle"/></svg></div>
+            <div class="feature-number">06 / PLUGINS</div>
+            <h3>Расширяет себя</h3>
+            <p>По запросу создаёт плагины с собственным кодом и README — под задачи владельца.</p>
+          </article>
+          <article class="feature-card reveal" style="--i:6">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></div>
+            <div class="feature-number">07 / CONNECTIVITY</div>
+            <h3>Подключается к сервисам</h3>
+            <p>Веб-поиск, GitHub API, чтение и отправка почты — через доступные инструменты Jarvis.</p>
+          </article>
+        </div>
+        <div class="feature-footnote reveal"><span class="footnote-mark">*</span> Команды и действия выполняются на компьютере пользователя. Перед запуском незнакомых команд проверяй, что именно они делают.</div>
+      </div>
+    </section>
+
+    <section class="section section-interface" id="interfaces">
+      <div class="container">
+        <div class="section-heading section-heading-center reveal">
+          <div class="eyebrow">ДВА СПОСОБА РАБОТАТЬ</div>
+          <h2>Выбирай свой<br><span class="text-secondary">интерфейс.</span></h2>
+          <p>Один Jarvis — разные сценарии. Напиши сообщение в Telegram или открой терминал и работай в CLI.</p>
+        </div>
+        <div class="interface-grid">
+          <article class="interface-card telegram-card reveal">
+            <div class="interface-card-head"><div><span class="mini-kicker">01 / TELEGRAM</span><h3>Управление в чате</h3></div><span class="interface-symbol"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></span></div>
+            <p>Отправляй текст, голосовые сообщения, изображения и документы прямо боту.</p>
+            <figure class="screenshot-wrap screenshot-telegram"><img src="assets/telegram-chat.webp" width="752" height="315" alt="Фрагмент переписки с Jarvis в Telegram: ответ ассистента на вопрос пользователя" loading="lazy" decoding="async"></figure>
+            <div class="interface-caption"><span>Быстрый доступ к ассистенту</span><span>TELEGRAM</span></div>
+          </article>
+          <article class="interface-card cli-card reveal" style="--i:1">
+            <div class="interface-card-head"><div><span class="mini-kicker">02 / CUSTOM CLI</span><h3>Свой командный интерфейс</h3></div><span class="interface-symbol"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></span></div>
+            <p>Лаконичный терминал, ASCII-логотип, статус модулей и двухстрочный prompt.</p>
+            <figure class="screenshot-wrap screenshot-cli"><img src="assets/cli-preview.webp" width="1482" height="770" alt="Окно Jarvis CMD с ASCII-логотипом, количеством загруженных модулей и диалогом с ассистентом" loading="lazy" decoding="async"></figure>
+            <div class="interface-caption"><span>Рабочая среда в терминале</span><span>CLI</span></div>
+          </article>
+        </div>
+        <div class="telegram-flow reveal">
+          <div class="telegram-flow-copy"><span class="mini-kicker">TELEGRAM BOT</span><h3>Покупка и доступ —<br>тоже через Telegram.</h3><p>В боте можно узнать о Jarvis, выбрать лицензию и перейти к инструкциям.</p><a class="text-link" href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="bot-flow">Открыть @JarvisAI_agent <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+          <div class="telegram-flow-image"><figure><img src="assets/telegram-menu.webp" width="668" height="433" alt="Меню Telegram-бота Jarvis с разделами о продукте, покупке лицензии и инструкции" loading="lazy" decoding="async"></figure><span class="image-index">BOT / MENU PREVIEW</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-engine" id="engine">
+      <div class="container engine-grid">
+        <div class="engine-copy reveal">
+          <div class="eyebrow">ДВУХУРОВНЕВАЯ АРХИТЕКТУРА</div>
+          <h2>Сначала план.<br><span class="text-secondary">Затем действие.</span></h2>
+          <p>Для простых запросов Jarvis обращается к Groq напрямую. Для многошаговых задач Mistral сначала формирует план, а затем Groq выполняет его с помощью инструментов.</p>
+          <div class="model-list">
+            <div class="model-row"><span class="model-index">01</span><div><strong>Groq</strong><small>Исполнитель запросов и инструментов</small></div><span class="model-tag">EXECUTION</span></div>
+            <div class="model-row"><span class="model-index">02</span><div><strong>Mistral</strong><small>Планирование сложных задач</small></div><span class="model-tag">PLANNING</span></div>
+            <div class="model-row"><span class="model-index">03</span><div><strong>Vision + Whisper</strong><small>Изображения и распознавание речи</small></div><span class="model-tag">INPUT</span></div>
+          </div>
+        </div>
+        <div class="engine-visual reveal" style="--i:1">
+          <div class="engine-orbit orbit-one"></div><div class="engine-orbit orbit-two"></div>
+          <div class="engine-core"><img src="assets/jarvis-mark.png" width="76" height="76" alt="" loading="lazy"><span>JARVIS CORE</span></div>
+          <div class="engine-node node-groq"><span class="node-dot"></span><strong>Groq</strong><small>Выполняет</small></div>
+          <div class="engine-node node-mistral"><span class="node-dot"></span><strong>Mistral</strong><small>Планирует</small></div>
+          <div class="engine-node node-vision"><span class="node-dot"></span><strong>Vision / Whisper</strong><small>Воспринимает</small></div>
+          <div class="engine-foot">РОЛИ МОДЕЛЕЙ В АРХИТЕКТУРЕ JARVIS</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-growth" id="plugins">
+      <div class="container growth-grid">
+        <div class="growth-image reveal"><img src="assets/jarvis-visual.webp" width="1024" height="1024" alt="Промо-иллюстрация Jarvis с цифровым ассистентом и интерфейсными панелями" loading="lazy" decoding="async"></div>
+        <div class="growth-copy reveal" style="--i:1">
+          <div class="eyebrow">ПЛАГИНЫ И РАСШИРЕНИЯ</div>
+          <h2>Не подстраивайся<br>под ассистента.<br><span class="text-secondary">Расширяй его.</span></h2>
+          <p>Скажи Jarvis, чему нужно научиться. Он может подготовить отдельный плагин в папке <code>haiper/&lt;name&gt;/</code> с файлом <code>main.py</code> и README.</p>
+          <div class="plugin-terminal"><div class="plugin-terminal-top"><span></span><span></span><span></span><small>PLUGIN / NEW</small></div><pre><span class="term-dim">jarvis@local</span> <span class="term-purple">~</span>
+<span class="term-prompt">&gt;</span> Научись делать X
+
+<span class="term-green">[ok]</span> Создан каталог плагина
+<span class="term-green">[ok]</span> main.py
+<span class="term-green">[ok]</span> README.md</pre></div>
+          <p class="small-note">Пример сценария из концепции продукта; состав и результат плагина зависят от задачи.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-setup" id="setup">
+      <div class="container">
+        <div class="section-heading reveal"><div><div class="eyebrow">НАЧАТЬ ПРОСТО</div><h2>От покупки<br><span class="text-secondary">до первого запуска.</span></h2></div><p>Jarvis поставляется как архив проекта. Настрой API по инструкции, открой исполняемый файл — и подключай ассистента к своему рабочему процессу.</p></div>
+        <div class="setup-layout">
+          <div class="setup-steps">
+            <article class="setup-step reveal"><span class="step-number">01</span><div><h3>Открой Telegram-бота</h3><p>Перейди в @JarvisAI_agent и выбери подходящую лицензию.</p></div><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></article>
+            <article class="setup-step reveal" style="--i:1"><span class="step-number">02</span><div><h3>Получи архив проекта</h3><p>После покупки бот предоставит ZIP-архив и ссылки на дальнейшие инструкции.</p></div><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></article>
+            <article class="setup-step reveal" style="--i:2"><span class="step-number">03</span><div><h3>Добавь API-ключи</h3><p>Получи необходимые ключи по инструкциям и внеси их в файл конфигурации.</p></div><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></article>
+            <article class="setup-step reveal" style="--i:3"><span class="step-number">04</span><div><h3>Запусти Jarvis.exe</h3><p>Открой исполняемый файл на Windows и выбери Telegram или CLI для работы.</p></div><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></article>
+          </div>
+          <aside class="setup-aside reveal" style="--i:2"><div class="setup-aside-top"><span class="mini-kicker">BEFORE YOU START</span><span class="windows-label">WINDOWS</span></div><img src="assets/jarvis-startup.webp" width="1024" height="1024" alt="Промо-изображение Jarvis с терминальным окном запуска ассистента" loading="lazy" decoding="async"><div class="setup-aside-bottom"><strong>Твои API-ключи — твоя конфигурация.</strong><p>Не публикуй ключи в открытых репозиториях и не отправляй их посторонним.</p></div></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-pricing" id="pricing">
+      <div class="container pricing-shell">
+        <div class="pricing-heading reveal"><div class="eyebrow">ЛИЦЕНЗИИ</div><h2>Выбери свой<br><span class="text-secondary">доступ к Jarvis.</span></h2><p>Покупка и получение проекта проходят через официальный Telegram-бот.</p></div>
+        <div class="pricing-content">
+        <div class="pricing-cards">
+          <article class="price-card reveal"><div class="price-top"><span class="mini-kicker">01 / MONTHLY</span><span class="price-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span></div><h3>На месяц</h3><p class="price-description">Лицензия Jarvis на один месяц.</p><div class="price-value"><strong>150</strong><span>Stars</span></div><div class="price-rule"></div><ul><li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> Лицензионный ключ</li><li><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Архив проекта</li><li><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> Инструкции по настройке</li></ul><a class="button button-glass price-button" href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="price-month">Выбрать на месяц <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+          <article class="price-card price-card-featured reveal" style="--i:1"><div class="price-feature-label">ОДИН РАЗ — НАВСЕГДА</div><div class="price-top"><span class="mini-kicker">02 / LIFETIME</span><span class="price-icon price-icon-accent"><svg class="icon" aria-hidden="true"><use href="#i-infinity"/></svg></span></div><h3>Навсегда</h3><p class="price-description">Постоянная лицензия Jarvis.</p><div class="price-value"><strong>1000</strong><span>Stars</span></div><div class="price-rule"></div><ul><li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> Лицензионный ключ</li><li><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Архив проекта</li><li><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> Инструкции по настройке</li></ul><a class="button button-light price-button" href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="price-lifetime">Купить навсегда <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+        </div>
+        <figure class="pricing-poster reveal" style="--i:2"><img src="assets/jarvis-pricing.webp" width="1254" height="1254" alt="Промо-постер Jarvis с двумя вариантами лицензии: 150 Stars в месяц и 1000 Stars навсегда" loading="lazy" decoding="async"><figcaption>JARVIS / LICENSE OPTIONS</figcaption></figure>
+        </div>
+        <div class="pricing-foot reveal"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>Лицензионный ключ привязывается к оборудованию по HWID.</span><a href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="pricing-bot">Открыть бота <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </div>
+    </section>
+
+    <section class="section section-faq" id="faq">
+      <div class="container faq-layout">
+        <div class="faq-heading reveal"><div class="eyebrow">FAQ</div><h2>Есть вопросы?<br><span class="text-secondary">Начни здесь.</span></h2><p>Коротко о покупке, настройке и работе Jarvis.</p><a class="text-link" href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="faq-bot">Спросить в Telegram <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        <div class="faq-list reveal" style="--i:1">
+          <details class="faq-item"><summary><span>На какой системе работает Jarvis?</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>Текущая версия предназначена для Windows. Поддержка других операционных систем рассматривается на будущее, но сейчас не заявляется.</p></div></details>
+          <details class="faq-item"><summary><span>Что я получу после покупки?</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>Telegram-бот выдаст архив проекта и дальнейшие инструкции по настройке. Jarvis запускается на компьютере пользователя.</p></div></details>
+          <details class="faq-item"><summary><span>Нужно ли самостоятельно подключать API?</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>Да. Необходимые API-ключи нужно получить по ссылкам из инструкции и добавить в конфигурацию проекта. Не размещай их в публичных репозиториях.</p></div></details>
+          <details class="faq-item"><summary><span>Чем Jarvis отличается от обычного чат-бота?</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>Jarvis работает на твоём ПК и использует инструменты для файлов, команд, Python-кода и документов. Управлять им можно через Telegram или CLI.</p></div></details>
+          <details class="faq-item"><summary><span>Чем отличаются лицензии?</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>Месячная лицензия стоит 150 Telegram Stars, постоянная — 1000 Telegram Stars. Ключ привязывается к оборудованию по HWID.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta section-shell">
+      <div class="container final-cta-inner reveal">
+        <div class="final-glow" aria-hidden="true"></div>
+        <img class="final-mark" src="assets/jarvis-mark.png" width="58" height="58" alt="" loading="lazy">
+        <div class="eyebrow">READY WHEN YOU ARE</div>
+        <h2>Пора познакомиться<br><span class="gradient-text">с Jarvis.</span></h2>
+        <p>Посмотри возможности, выбери лицензию и получи проект через Telegram.</p>
+        <a class="button button-light button-large" href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="final-buy">Перейти в Telegram-бота <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="final-meta">@JarvisAI_agent <span>·</span> Windows</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand"><a class="brand" href="#top"><img src="assets/jarvis-mark.png" width="30" height="30" alt=""><span>jarvis<span class="brand-period">.</span></span></a><p>Персональный AI-ассистент<br>на твоём компьютере.</p></div>
+      <div class="footer-col"><span class="footer-label">НАВИГАЦИЯ</span><a href="#features">Возможности</a><a href="#interfaces">Интерфейсы</a><a href="#setup">Установка</a><a href="#pricing">Тарифы</a></div>
+      <div class="footer-col"><span class="footer-label">ССЫЛКИ</span><a href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="footer-telegram">Telegram-бот</a><a href="https://github.com/Tandi345645321/JarvisAPP" target="_blank" rel="noopener noreferrer" data-track="footer-github">GitHub <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="privacy.html">Конфиденциальность</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year">2026</span> Jarvis. Все права на проект принадлежат его автору.</span><span>Сделано для тех, кто любит управлять процессом.</span></div>
+  </footer>
+
+  <div class="mobile-sticky-cta" aria-label="Быстрая покупка"><a class="button button-light" href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="mobile-sticky">Купить Jarvis — от 150 Stars <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+
+  <section class="cookie-banner" id="cookie-banner" aria-label="Настройки аналитики" hidden>
+    <div class="cookie-copy"><strong>Настройки конфиденциальности</strong><p>Аналитика отключена, пока ты не дашь согласие. Подробнее — в <a href="privacy.html">политике конфиденциальности</a>.</p></div>
+    <div class="cookie-actions"><button class="button button-small button-glass" id="cookie-settings" type="button">Настроить</button><button class="button button-small button-light" id="cookie-accept" type="button">Принять</button></div>
+    <div class="cookie-settings-panel" id="cookie-settings-panel" hidden><label><input type="checkbox" checked disabled> Необходимые настройки <small>Всегда активны</small></label><label><input id="analytics-consent" type="checkbox"> Аналитика <small>Google Analytics 4, если ID подключён владельцем сайта</small></label><button class="button button-small button-light" id="cookie-save" type="button">Сохранить выбор</button></div>
+  </section>
+  <script src="script.js" defer></script>
+</body>
+</html>
