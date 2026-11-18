@@ -97,6 +97,7 @@
       <nav class="desktop-nav" aria-label="Основная навигация">
         <a href="#features">Возможности</a>
         <a href="#interfaces">Интерфейсы</a>
+        <a href="#workflow">Как работает</a>
         <a href="#setup">Установка</a>
         <a href="#visuals">Фото</a>
         <a href="#pricing">Тарифы</a>
@@ -111,7 +112,7 @@
       </div>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" hidden>
-      <a href="#features">Возможности</a><a href="#interfaces">Интерфейсы</a><a href="#setup">Установка</a><a href="#visuals">Фото проекта</a><a href="#pricing">Тарифы</a>
+      <a href="#features">Возможности</a><a href="#interfaces">Интерфейсы</a><a href="#workflow">Как работает</a><a href="#setup">Установка</a><a href="#visuals">Фото проекта</a><a href="#pricing">Тарифы</a>
       <a class="button button-light" href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="mobile-menu-buy">Перейти к покупке <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </nav>
   </header>
@@ -256,6 +257,46 @@
       </div>
     </section>
 
+    <section class="section section-workflow" id="workflow">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><div class="eyebrow">КАК JARVIS ВЫПОЛНЯЕТ ЗАДАЧИ</div><h2>От сообщения<br><span class="text-secondary">до результата.</span></h2></div>
+          <p>Ассистент не ограничивается ответом в чате. Он разбирает запрос, выбирает подход к задаче и обращается к подключённым инструментам на компьютере.</p>
+        </div>
+        <div class="workflow-track">
+          <article class="workflow-card reveal" style="--i:0">
+            <span class="workflow-index">01 / INPUT</span>
+            <div class="workflow-symbol"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></div>
+            <h3>Ты ставишь задачу</h3>
+            <p>Напиши в Telegram или CLI обычным языком: найти файл, подготовить проект, прочитать документ или запустить скрипт.</p>
+            <span class="workflow-foot">TELEGRAM · CLI</span>
+          </article>
+          <article class="workflow-card reveal" style="--i:1">
+            <span class="workflow-index">02 / THINK</span>
+            <div class="workflow-symbol"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg></div>
+            <h3>Jarvis выбирает путь</h3>
+            <p>Простой запрос уходит к основной модели напрямую. Для сложной задачи планировщик может разбить работу на последовательные шаги.</p>
+            <span class="workflow-foot">GROQ · MISTRAL</span>
+          </article>
+          <article class="workflow-card reveal" style="--i:2">
+            <span class="workflow-index">03 / TOOLS</span>
+            <div class="workflow-symbol"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></div>
+            <h3>Инструменты работают</h3>
+            <p>По запросу используются файловая система, shell-команды, Python, обработка документов, веб-поиск и установленные плагины.</p>
+            <span class="workflow-foot">FILES · SHELL · PYTHON</span>
+          </article>
+          <article class="workflow-card reveal" style="--i:3">
+            <span class="workflow-index">04 / RESULT</span>
+            <div class="workflow-symbol"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+            <h3>Ты видишь результат</h3>
+            <p>Ответ и результат выполнения возвращаются в тот интерфейс, из которого ты начал: Telegram или собственный терминал Jarvis.</p>
+            <span class="workflow-foot">RESULT · FEEDBACK</span>
+          </article>
+        </div>
+        <p class="workflow-note reveal">Для работы с облачными моделями нужны собственные API-ключи. Возможности локальных действий зависят от выданных системе прав и настроек пользователя.</p>
+      </div>
+    </section>
+
     <section class="section section-growth" id="plugins">
       <div class="container growth-grid">
         <div class="growth-image reveal"><img src="jarvis-visual.webp" width="1024" height="1024" alt="Промо-иллюстрация Jarvis с цифровым ассистентом и интерфейсными панелями" loading="lazy" decoding="async"></div>
@@ -346,7 +387,7 @@
   <footer class="site-footer">
     <div class="container footer-main">
       <div class="footer-brand"><a class="brand" href="#top"><img src="jarvis-mark.png" width="30" height="30" alt=""><span>jarvis<span class="brand-period">.</span></span></a><p>Персональный AI-ассистент<br>на твоём компьютере.</p></div>
-      <div class="footer-col"><span class="footer-label">НАВИГАЦИЯ</span><a href="#features">Возможности</a><a href="#interfaces">Интерфейсы</a><a href="#setup">Установка</a><a href="#visuals">Фото проекта</a><a href="#pricing">Тарифы</a></div>
+      <div class="footer-col"><span class="footer-label">НАВИГАЦИЯ</span><a href="#features">Возможности</a><a href="#interfaces">Интерфейсы</a><a href="#workflow">Как работает</a><a href="#setup">Установка</a><a href="#visuals">Фото проекта</a><a href="#pricing">Тарифы</a></div>
       <div class="footer-col"><span class="footer-label">ССЫЛКИ</span><a href="https://t.me/JarvisAI_agent" target="_blank" rel="noopener noreferrer" data-track="footer-telegram">Telegram-бот</a><a href="https://github.com/Tandi345645321/JarvisAPP" target="_blank" rel="noopener noreferrer" data-track="footer-github">GitHub <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="privacy.html">Конфиденциальность</a></div>
     </div>
     <div class="container footer-bottom"><span>© <span id="year">2026</span> Jarvis. Все права на проект принадлежат его автору.</span><span>Сделано для тех, кто любит управлять процессом.</span></div>
