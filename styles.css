@@ -650,3 +650,200 @@ h1 { max-width: 720px; margin-bottom: 25px; font-size: clamp(54px,6.6vw,86px); l
   .setup-steps::before { transition:none!important; transform:scaleY(1); }
   .js-motion-ready .reveal { opacity:1!important; transform:none!important; filter:none!important; }
 }
+
+
+/* Clear optical glass — no frosted blur. The surface stays transparent so content remains visible underneath. */
+:root {
+  --glass-bg: rgba(8, 8, 11, .075);
+  --glass-edge: rgba(255,255,255,.27);
+}
+:root[data-theme="light"] {
+  --glass-bg: rgba(255,255,255,.115);
+  --glass-edge: rgba(20,20,24,.18);
+}
+.site-header,
+.site-header.is-scrolled {
+  background: var(--glass-bg) !important;
+  -webkit-backdrop-filter: blur(0px) saturate(1.85) brightness(1.12) contrast(1.18) !important;
+  backdrop-filter: blur(0px) saturate(1.85) brightness(1.12) contrast(1.18) !important;
+  border-color: var(--glass-edge);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.44),
+    inset 0 -1px 0 rgba(255,255,255,.08),
+    inset 0 0 0 1px rgba(255,255,255,.055),
+    0 16px 42px -24px rgba(0,0,0,.52),
+    0 2px 9px rgba(0,0,0,.15);
+}
+.site-header::before {
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.055) 17%,transparent 44%),
+    linear-gradient(90deg,rgba(255,255,255,.035),transparent 24%,rgba(255,255,255,.018) 54%,transparent 80%),
+    radial-gradient(90% 110% at 7% 0%,rgba(255,255,255,.12),transparent 60%);
+  opacity: .82;
+  mix-blend-mode: screen;
+}
+.site-header::after {
+  inset: 1px;
+  border-color: rgba(255,255,255,.10);
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.075),transparent 28%),
+    linear-gradient(0deg,rgba(255,255,255,.035),transparent 22%);
+}
+:root[data-theme="light"] .site-header::before {
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.54),rgba(255,255,255,.12) 26%,transparent 62%),
+    linear-gradient(90deg,rgba(255,255,255,.2),transparent 28%,rgba(255,255,255,.12) 70%,transparent);
+  mix-blend-mode: normal;
+}
+:root[data-theme="light"] .site-header::after {
+  border-color: rgba(0,0,0,.07);
+}
+.site-header .desktop-nav a {
+  color: color-mix(in srgb,var(--color-ink) 90%,transparent);
+  text-shadow: 0 1px 1px color-mix(in srgb,var(--color-paper) 32%,transparent);
+}
+.site-header .brand,
+.site-header .theme-toggle,
+.site-header .menu-toggle {
+  color: var(--color-ink);
+}
+/* A very fine lens line gives the impression that moving content touches the inner glass surface. */
+.site-header .header-inner::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: -1px;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg,transparent,rgba(255,255,255,.2) 18%,rgba(255,255,255,.48) 50%,rgba(255,255,255,.2) 82%,transparent);
+  opacity: .7;
+}
+:root[data-theme="light"] .site-header .header-inner::after {
+  background: linear-gradient(90deg,transparent,rgba(0,0,0,.08) 18%,rgba(255,255,255,.75) 50%,rgba(0,0,0,.08) 82%,transparent);
+}
+.mobile-nav {
+  background: rgba(9,9,12,.20) !important;
+  -webkit-backdrop-filter: blur(0px) saturate(1.8) contrast(1.14) !important;
+  backdrop-filter: blur(0px) saturate(1.8) contrast(1.14) !important;
+}
+:root[data-theme="light"] .mobile-nav {
+  background: rgba(255,255,255,.28) !important;
+}
+
+/* Clear glass reads best with a subtle edge/reflection, not a grey opaque fill. */
+.workflow-card,
+.ownership-card {
+  background: linear-gradient(145deg,rgba(255,255,255,.035),transparent 52%),var(--color-card);
+}
+.section-ownership { padding-top: clamp(74px,9vw,112px); }
+.ownership-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 13px;
+  margin-top: 32px;
+}
+.ownership-card {
+  min-width: 0;
+  padding: clamp(20px,2.5vw,29px);
+  border: 1px solid var(--color-rule);
+  border-radius: 19px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.055);
+  transition: transform .6s var(--ease-soft),border-color .45s var(--ease-soft),box-shadow .5s var(--ease-soft);
+}
+.ownership-card:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb,var(--color-accent) 42%,var(--color-rule));
+  box-shadow: 0 25px 60px -44px color-mix(in srgb,var(--color-accent) 36%,transparent);
+}
+.ownership-index {
+  color: var(--color-muted);
+  font: 9px var(--font-mono);
+  letter-spacing: .14em;
+}
+.ownership-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin: 23px 0 21px;
+  border: 1px solid color-mix(in srgb,var(--color-accent) 32%,var(--color-rule));
+  border-radius: 15px;
+  color: var(--color-accent);
+  background: var(--color-soft);
+}
+.ownership-icon .icon { width: 22px; height: 22px; }
+.ownership-card h3 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+.ownership-card p {
+  color: var(--color-secondary);
+  font-size: 13px;
+  line-height: 1.72;
+}
+.ownership-card .ownership-detail {
+  margin: 22px 0 0;
+  padding-top: 13px;
+  border-top: 1px solid var(--color-rule);
+  color: var(--color-muted);
+  font: 9px var(--font-mono);
+  letter-spacing: .07em;
+  line-height: 1.6;
+}
+.ownership-note {
+  max-width: 850px;
+  margin: 18px 0 0;
+  color: var(--color-muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* Reveal choreography uses two animation stages and a real painted initial frame. */
+.js-motion-ready .reveal {
+  opacity: 0;
+  transform: translate3d(0,42px,0) scale(.975);
+  filter: blur(7px);
+  transition:
+    opacity .95s var(--ease-soft),
+    transform 1.05s var(--ease-soft),
+    filter .95s var(--ease-soft);
+  transition-delay: var(--reveal-delay,0ms);
+  will-change: opacity,transform,filter;
+}
+.js-motion-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0,0,0) scale(1);
+  filter: blur(0);
+}
+.workflow-card.is-visible,
+.ownership-card.is-visible {
+  border-color: color-mix(in srgb,var(--color-accent) 22%,var(--color-rule));
+}
+.setup-steps::before {
+  transform: scaleY(0);
+  transition: transform 1.7s var(--ease-soft) .18s;
+}
+.setup-steps:has(.setup-step.is-visible)::before { transform: scaleY(1); }
+@media (max-width: 1050px) {
+  .ownership-grid { grid-template-columns: 1fr 1fr; }
+  .ownership-card:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 860px) {
+  .ownership-grid { grid-template-columns: 1fr; }
+  .ownership-card:last-child { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Keep a short opacity cue without large movement for reduced-motion users. */
+  .js-motion-ready .reveal {
+    opacity: 0;
+    transform: none;
+    filter: none;
+    transition: opacity .22s ease-out;
+    transition-delay: 0ms;
+  }
+  .js-motion-ready .reveal.is-visible { opacity: 1; }
+  .site-header::before { animation: none !important; }
+}
